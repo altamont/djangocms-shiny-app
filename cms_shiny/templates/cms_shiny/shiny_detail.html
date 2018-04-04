@@ -1,18 +1,30 @@
-{% extends "base.html" %}
+{% extends "base_app.html" %}
 {% load sekizai_tags staticfiles %}
 
 {% block title %}
   {{ shiny_app.name }}{% if LAB_NAME %} | {{ LAB_NAME }}{% endif %}
 {% endblock title %}
 
+ {% block extracss %}
+ <style type="text/css">
+            body, html
+            {
+                margin: 0; padding: 0; height: 100%; overflow: hidden;
+            }
+
+            #content
+            {
+                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+            }
+        </style>
+ {%endblock extracss %}
+
+
 {% block content %}
 
-  {% addtoblock "css" strip %}
-    <link rel="stylesheet" type="text/css" href="{% static 'cms_shiny/app.css' %}">
-  {% endaddtoblock %}
-
-  <iframe class="shiny-app" src="{{ shiny_app.url }}"></iframe>
-
-  {% include "cms_shiny/_shiny_app_info.html" %}
+  <div id="content">
+  <iframe width="100%" height="100%" frameborder="0" src="{{ shiny_app.url }}"></iframe>
+</div>
+  
 
 {% endblock content %}
