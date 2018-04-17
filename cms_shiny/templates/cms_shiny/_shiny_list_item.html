@@ -6,7 +6,7 @@
 
 <div class="thumbnail">
 
-  <a href="{% url 'cms_shiny:shiny_detail' shiny_app.slug %}">
+  <a class="thumbnail" target="_blank" href="{{ shiny_app.url }}">
     {% if shiny_app.image %}
       <img src="{{ shiny_app.image.url }}" alt="{{ shiny_app.name }}">
     {% else %}
