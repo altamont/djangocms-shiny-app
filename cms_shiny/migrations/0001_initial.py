@@ -8,7 +8,7 @@ import filer.fields.image
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('filer', '0002_auto_20150414_2353'),
+        ('filer'),
     ]
 
     operations = [
