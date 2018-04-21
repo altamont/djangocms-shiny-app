@@ -8,7 +8,7 @@ import filer.fields.image
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('filer'),
+       
     ]
 
     operations = [
